@@ -23,11 +23,6 @@ module.exports = () => {
         title: "TextEditor"
       }),
 
-      new InjectManifest({
-        swSrc: './src-sw.js',
-        swDest: 'src-sw.js',
-      }),
-
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
@@ -35,8 +30,8 @@ module.exports = () => {
         description: 'Better than VS code!',
         background_color: '#225ca3',
         theme_color: '#225ca3',
-        start_url: './',
-        publicPath: './',
+        id: '/',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
@@ -45,6 +40,13 @@ module.exports = () => {
           },
         ],
       }),
+
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+      }),
+
+      
      ],
 
     module: {

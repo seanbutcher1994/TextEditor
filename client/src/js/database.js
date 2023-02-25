@@ -41,8 +41,8 @@ export const getDb = async () => {
   const req = objStore.getAll();
   // confirm data added 
   const res = await req;
-  console.log('result.value', res);
-  return res
+  console.log('res.value', res);
+  return res;
 }
 
 initdb();
